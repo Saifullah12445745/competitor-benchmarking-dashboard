@@ -1,12 +1,12 @@
 import sys
 import os
-import pandas as pd
-import streamlit as st
 
-# Add project root for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+import streamlit as st
+import pandas as pd
 from scraper.web_scraper import scrape_competitors
+
 
 st.set_page_config(page_title="Advanced Competitor Dashboard", layout="wide")
 
@@ -112,3 +112,4 @@ st.subheader("⬇ Download Data")
 
 csv = df.to_csv(index=False).encode("utf-8")
 st.download_button("Download CSV", csv, "competitor_data.csv", "text/csv")
+
